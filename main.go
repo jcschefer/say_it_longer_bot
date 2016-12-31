@@ -34,8 +34,15 @@ func main() {
    api, thesaurus_key := setup_api()
    defer api.Close()
    //
-   word := "quiet"
+   word := "map"
    fmt.Println( get_longest_synonym( word, thesaurus_key ) )
+   s := api.PublicStreamSample(nil)
+   data := <-s.C
+   for id := range data.([]int) {
+      tw, err := api.GetTweet( int64(id), nil )
+      check( err )
+      fmt.Println(tw.Text)
+   }
    //
 }
 //

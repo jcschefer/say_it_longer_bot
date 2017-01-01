@@ -2,7 +2,5 @@
 
 Respond to tweets in real time with longer synonyms.
 
-
 Dependencies:
-   <li>python-twitter</li>
-   <li>nltk</li>
+   <li><a href="https://github.com/ChimeraCoder/anaconda">Anaconda</li>
